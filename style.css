@@ -4,16 +4,15 @@
 }
 
 .box-chart {
-  width: 800px;
-  height: 400px;
-  margin-left: 100px;
-  float: left;
+  width: 1000px;
+  height: 500px;
 }
 
 .box-dropdown {
-  width: 100;
+  width: 1000;
   height: 100;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   position: relative;
 }
 
@@ -85,6 +84,7 @@ a {
   list-style: none;
   height: 100px;
   overflow: auto;
+  margin-bottom: 50px;
 }
 
 .dropdown span.value {
@@ -100,7 +100,6 @@ a {
   background-color: #fff;
 }
 
-
 hr {
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -112,7 +111,7 @@ hr {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  z-index:999
+  z-index: 999;
 }
 .graph {
   margin: auto;
@@ -126,8 +125,8 @@ hr {
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
@@ -136,7 +135,7 @@ hr {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: #4caf50;
   cursor: pointer;
 }
 
@@ -144,7 +143,7 @@ hr {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: #4caf50;
   cursor: pointer;
 }
 
