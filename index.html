@@ -1,103 +1,166 @@
 <html>
+  <head>
+    <title>Eastern Europe - Group 4</title>
+    <script src="./js/jquery-3.4.0.js"></script>
+    <script src="./js/jquery.csv.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="./js/tax.js"></script>
+    <script src="./js/revenue.js"></script>
+    <script src="./js/geochart.js"></script>
+    <script src="./js/gdp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@4.0.0/dist/simpleParallax.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
 
-<head>
-  <title>Eastern Europe - Group 4</title>
-  <script src="./js/jquery-3.4.0.js"></script>
-  <script src="./js/jquery.csv.min.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-  <script src="./js/tax.js"></script>
-  <script src="./js/revenue.js"></script>
-  <script src="./js/geochart.js"></script>
-  <script src="./js/gdp.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@4.0.0/dist/simpleParallax.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" type="text/css" href="./style.css" />
-</head>
-
-<body>
-    <nav class="navbar navbar-dark bg-dark " >
-        <span class="navbar-brand mb-0 h1">Eastern Europe - Group 4</span>
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link" href="#tax">Tax</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#revenue">Revenue</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#revenue-year">Revenue By Year</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#gdp">GDP</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#gdp-service">GDP-Service</a>
-          </li>
-        </ul>
+  <body>
+    <nav class="navbar navbar-dark bg-dark ">
+      <span class="navbar-brand mb-0 h1">Eastern Europe - Group 4</span>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#tax">Tax</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#revenue">Revenue</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#revenue-year">Revenue By Year</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gdp">GDP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gdp-service">GDP-Service</a>
+        </li>
+      </ul>
     </nav>
-  <div class="container">
-    <div data-aos = "fade-up" class="tax">
-      <img  id = 'tax' class="img_thumbnail" src="img/bulgaria.jpg">
-      <h1>Tax</h1>
-      <div id="DashBoard-Tax" class="graph" </div>
+    <div class="container">
+      <div data-aos="fade-up" class="tax">
+        <img id="tax" class="img_thumbnail" src="img/bulgaria.jpg" />
+        <h1>Tax</h1>
+        <div id="DashBoard-Tax" class="graph"
+      </div>
       <div>
-        <input class="btn btn-primary" type="button" id="Bulgaria" value="Bulgaria" />
-        <input class="btn btn-primary" type="button" id="Greece" value="Greece" />
-        <input class="btn btn-primary" type="button" id="Poland" value="Poland" />
-        <input class="btn btn-primary" type="button" id="Romania" value="Romania" />
-        <input class="btn btn-primary" type="button" id="Russia" value="Russia" />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="Bulgaria"
+          value="Bulgaria"
+        />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="Greece"
+          value="Greece"
+        />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="Poland"
+          value="Poland"
+        />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="Romania"
+          value="Romania"
+        />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="Russia"
+          value="Russia"
+        />
       </div>
     </div>
 
-    <hr>
+    <hr />
 
-    <div data-aos = "fade-up"  class="revenue" >
-      <img id = 'revenue' class="img_thumbnail" src="img/greece.jpg">
+    <div data-aos="fade-up" class="revenue">
+      <img id="revenue" class="img_thumbnail" src="img/greece.jpg" />
       <h1>Revenue</h1>
-      <div id="DashBoard-Revenue" class="graph" ></div>
-      <div id='Checkbox-group'>
-        <input type="checkbox" id="Bulgaria-checkbox" checked>Bulgaria</input>
-        <input type="checkbox" id="Greece-checkbox" checked>Greece</input>
-        <input type="checkbox" id="Poland-checkbox" checked>Poland</input>
-        <input type="checkbox" id="Romania-checkbox" checked>Romania</input>
-        <input type="checkbox" id="Russia-checkbox" checked>Russia</input>
+      <div id="DashBoard-Revenue" class="graph"></div>
+      <div id="Checkbox-group">
+        <input type="checkbox" id="Bulgaria-checkbox" checked />Bulgaria
+        <input type="checkbox" id="Greece-checkbox" checked />Greece
+        <input type="checkbox" id="Poland-checkbox" checked />Poland
+        <input type="checkbox" id="Romania-checkbox" checked />Romania
+        <input type="checkbox" id="Russia-checkbox" checked />Russia
       </div>
     </div>
 
-    <hr>
+    <hr />
 
-    <div data-aos = "fade-up" class="revenue-year" >
-      <img id = 'revenue-year' class="img_thumbnail" src="img/russia.jpg">
+    <div data-aos="fade-up" class="revenue-year">
+      <img id="revenue-year" class="img_thumbnail" src="img/russia.jpg" />
       <h1>Revenue by year</h1>
       <canvas id="myChart" class="graph" width="300" height="150"></canvas>
       <p id="year">Year: 2003</p>
-      <input id="slider" class="slider" type="range" min="2003" max="2013" value="2003">
+      <input
+        id="slider"
+        class="slider"
+        type="range"
+        min="2003"
+        max="2013"
+        value="2003"
+      />
       <script src="./js/script.js"></script>
     </div>
 
-    <hr>
+    <hr />
 
-    <div  data-aos = "fade-up" class="gdp" >
-      <img id = 'gdp' class="img_thumbnail" src="img/poland.jpg">
+    <div data-aos="fade-up" class="gdp">
+      <img id="gdp" class="img_thumbnail" src="img/poland.jpg" />
       <h1>Value added to GDP (Percent)</h1>
       <h1>Selected: <span id="current"></span></h1>
       <div id="dashboard_div">
         <div id="filter_div"></div>
-        <div id="regions_div" class="graph" style="width: 900px; height: 500px;"></div>
-        <input class="btn btn-primary" type="button" id="agriculture" value="Agriculture" />
-        <input class="btn btn-primary" type="button" id="services" value="Services" />
-        <input class="btn btn-primary" type="button" id="industry" value="Industry" />
+        <div
+          id="regions_div"
+          class="graph"
+          style="width: 900px; height: 500px;"
+        ></div>
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="agriculture"
+          value="Agriculture"
+        />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="services"
+          value="Services"
+        />
+        <input
+          class="btn btn-primary"
+          type="button"
+          id="industry"
+          value="Industry"
+        />
       </div>
     </div>
 
-    <hr>
+    <hr />
 
-    <div data-aos = "fade-up" class="gdp-service" >
-      <img id = 'gdp-service' class="img_thumbnail" src="img/romania.jpg">
+    <div data-aos="fade-up" class="gdp-service">
+      <img id="gdp-service" class="img_thumbnail" src="img/romania.jpg" />
       <div class="title">
         <h1>GDP - Services</h1>
       </div>
@@ -105,14 +168,14 @@
         <h4>Services value in USD</h4>
       </div>
       <div>
-        <h5>เนื่องด้วย Services ส่งผลต่อ GDP ใน 5 ประเทศที่เลือกมา</h5>
+        <h5>Because services type affect GDP in all selected countries</h5>
       </div>
       <div>
         <div class="box-chart graph" id="gdp-chart"></div>
         <div class="box-dropdown">
           <dl class="dropdown">
             <dt>
-              <a href="#">
+              <a>
                 <span class="hida">Select</span>
                 <p class="multiSel"></p>
               </a>
@@ -121,19 +184,39 @@
               <div class="mutliSelect" id="multi-select">
                 <ul>
                   <li>
-                    <input type="checkbox" id="cb-Bulgaria" value="Bulgaria" />Bulgaria
+                    <input
+                      type="checkbox"
+                      id="cb-Bulgaria"
+                      value="Bulgaria"
+                    />Bulgaria
                   </li>
                   <li>
-                    <input type="checkbox" id="cb-Greece" value="Greece" />Greece
+                    <input
+                      type="checkbox"
+                      id="cb-Greece"
+                      value="Greece"
+                    />Greece
                   </li>
                   <li>
-                    <input type="checkbox" id="cb-Poland" value="Poland" />Poland
+                    <input
+                      type="checkbox"
+                      id="cb-Poland"
+                      value="Poland"
+                    />Poland
                   </li>
                   <li>
-                    <input type="checkbox" id="cb-Romania" value="Romania" />Romania
+                    <input
+                      type="checkbox"
+                      id="cb-Romania"
+                      value="Romania"
+                    />Romania
                   </li>
                   <li>
-                    <input type="checkbox" id="cb-Russia" value="Russia" />Russia
+                    <input
+                      type="checkbox"
+                      id="cb-Russia"
+                      value="Russia"
+                    />Russia
                   </li>
                 </ul>
               </div>
@@ -142,16 +225,14 @@
         </div>
       </div>
     </div>
-  </div>
-</body>
-<script>
-  var images = document.getElementsByClassName("img_thumbnail");
-  new simpleParallax(images, {
-    orientation: 'left',
-    scale: 3.5,
-    overflow: true
-  });
-  AOS.init();
-</script>
-
+  </body>
+  <script>
+    var images = document.getElementsByClassName("img_thumbnail");
+    new simpleParallax(images, {
+      orientation: "left",
+      scale: 3.5,
+      overflow: true
+    });
+    AOS.init();
+  </script>
 </html>
