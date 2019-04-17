@@ -117,6 +117,9 @@ hr {
   width: 100%; /* Full width */
   z-index: 999;
 }
+.nav-item{
+  font-size: 20px;
+}
 .nav-item :hover {
   background-color: bisque;
 }
