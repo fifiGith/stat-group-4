@@ -21,7 +21,7 @@ function drawChart() {
         format: 'year '
       },
       vAxis: {
-        title: "Tax value",
+        title: "Tax value (USD)",
         viewWindowMode: 'explicit',
         viewWindow: {
           min: 0
@@ -50,7 +50,7 @@ function drawChart() {
           format: 'year '
         },
         vAxis: {
-          title: "Tax value",
+          title: "Tax value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
@@ -80,7 +80,7 @@ function drawChart() {
           format: 'year '
         },
         vAxis: {
-          title: "Tax value",
+          title: "Tax value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
@@ -110,7 +110,7 @@ function drawChart() {
           format: 'year '
         },
         vAxis: {
-          title: "Tax value",
+          title: "Tax value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
@@ -140,7 +140,7 @@ function drawChart() {
           format: 'year '
         },
         vAxis: {
-          title: "Tax value",
+          title: "Tax value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
@@ -170,7 +170,7 @@ function drawChart() {
           format: 'year '
         },
         vAxis: {
-          title: "Tax value",
+          title: "Tax value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
