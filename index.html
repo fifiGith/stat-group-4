@@ -10,14 +10,16 @@
   <script src="./js/revenue.js"></script>
   <script src="./js/geochart.js"></script>
   <script src="./js/gdp.js"></script>
+  <script src="./js/gdp-country.js"></script>
+  <script src="./js/gdp-factor.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@4.0.0/dist/simpleParallax.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
@@ -46,6 +48,12 @@
             <a class="nav-link" href="#gdp">GDP</a>
           </li>
           <li class="nav-item">
+              <a class="nav-link" href="#gdp-factor">GDP - Factor</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#gdp-country">GDP - Country</a>
+            </li>
+          <li class="nav-item">
             <a class="nav-link" href="#gdp-service">GDP-Service</a>
           </li>
         </ul>
@@ -56,7 +64,7 @@
   <div class="container">
     <div data-aos = "fade-up" class="tax">
       <img  id = 'tax' class="img_thumbnail" src="img/bulgaria.jpg">
-      <h1>Tax</h1>
+      <h1>Tax - Factor</h1>
       <div id="DashBoard-Tax" class="graph" style="width: 1000px; height: 500px"></div>
       <div>
         <input class="btn btn-primary" type="button" id="Bulgaria" value="Bulgaria" />
@@ -108,7 +116,37 @@
       </div>
     </div>
 
+    <div data-aos = "fade-up" class="gdp-factor">
+        <img  id = 'gdp-factor' class="img_thumbnail" src="img/bulgaria.jpg">
+        <h1>GDP - Factor</h1>
+        <div id="DashBoard-GDP-Factor" class="graph" style="width: 1000px; height: 500px"></div>
+        <div>
+          <input class="btn btn-primary" type="button" id="Bulgaria-Factor" value="Bulgaria" />
+          <input class="btn btn-primary" type="button" id="Greece-Factor" value="Greece" />
+          <input class="btn btn-primary" type="button" id="Poland-Factor" value="Poland" />
+          <input class="btn btn-primary" type="button" id="Romania-Factor" value="Romania" />
+          <input class="btn btn-primary" type="button" id="Russia-Factor" value="Russia" />
+        </div>
+      </div>
+  
+      <hr>
+  
+
     <hr>
+    <div data-aos = "fade-up"  class="gdp-country" >
+        <img id = 'gdp-country' class="img_thumbnail" src="img/greece.jpg">
+        <h1>GDP Compare - Country</h1>
+        <div id="DashBoard-GDP-Country" class="graph" style="width: 1000px; height: 500px"></div>
+        <div id='Checkbox-group-gdp'>
+          <input type="checkbox" class = 'check' id="Bulgaria-checkbox-gdp" checked>Bulgaria</input>
+          <input type="checkbox" class = 'check' id="Greece-checkbox-gdp" checked>Greece</input>
+          <input type="checkbox" class = 'check' id="Poland-checkbox-gdp" checked>Poland</input>
+          <input type="checkbox" class = 'check' id="Romania-checkbox-gdp" checked>Romania</input>
+          <input type="checkbox" class = 'check' id="Russia-checkbox-gdp" checked>Russia</input>
+        </div>
+      </div>
+  
+      <hr>
 
     <div data-aos = "fade-up" class="gdp-service" >
       <img id = 'gdp-service' class="img_thumbnail" src="img/romania.jpg">

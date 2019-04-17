@@ -4,7 +4,7 @@ google.charts.load('current', {
   google.charts.setOnLoadCallback(drawChart);
   
   function drawChart() {
-    $.get("./data/Revenue.csv", function (csvString) {
+    $.get("./data/GDP.csv", function (csvString) {
       var arrayData = $.csv.toArrays(csvString, {
         onParseValue: $.csv.hooks.castToScalar
       });
@@ -14,7 +14,7 @@ google.charts.load('current', {
       var options = {
         weight: 900,
         height: 500,
-        title: 'Revenue',
+        title: 'GDP & Country',
         legend: {
           position: 'bottom'
         },
@@ -23,24 +23,24 @@ google.charts.load('current', {
           format: 'year '
         },
         vAxis: {
-          title: "Revenue value (USD)",
+          title: "GDP value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
           }
         }
       };
-      var chart = new google.visualization.LineChart(document.getElementById('DashBoard-Revenue'));
+      var chart = new google.visualization.LineChart(document.getElementById('DashBoard-GDP-Country'));
       chart.draw(view, options);
     });
   
-    var Bulgaria = document.getElementById('Bulgaria-checkbox')
-    var Greece = document.getElementById('Greece-checkbox')
-    var Romania = document.getElementById('Romania-checkbox')
-    var Poland = document.getElementById('Poland-checkbox')
-    var Russia = document.getElementById('Russia-checkbox')
+    var Bulgaria = document.getElementById('Bulgaria-checkbox-gdp')
+    var Greece = document.getElementById('Greece-checkbox-gdp')
+    var Romania = document.getElementById('Romania-checkbox-gdp')
+    var Poland = document.getElementById('Poland-checkbox-gdp')
+    var Russia = document.getElementById('Russia-checkbox-gdp')
   
-    document.getElementById('Checkbox-group').addEventListener('click', function () {
+    document.getElementById('Checkbox-group-gdp').addEventListener('click', function () {
       console.log('IN')
       var select = [0, ]
       if (Bulgaria.checked) {
@@ -61,7 +61,7 @@ google.charts.load('current', {
       
       if (Russia.checked||Poland.checked||Romania.checked||Greece.checked||Bulgaria.checked)
       {
-        $.get("./data/Revenue.csv", function (csvString) {
+        $.get("./data/GDP.csv", function (csvString) {
           var arrayData = $.csv.toArrays(csvString, {
             onParseValue: $.csv.hooks.castToScalar
           });
@@ -72,28 +72,28 @@ google.charts.load('current', {
           var options = {
             weight: 900,
             height: 500,
-            title: 'Revenue',
+            title: 'GDP & Country',
             legend: {
               position: 'bottom'
             },
             hAxis: {
-              title: "Year",
-              format: 'year '
+                title: "Year",
+                format: 'year '
             },
             vAxis: {
-              title: "Revenue value (USD)",
+              title: "GDP value (USD)",
               viewWindowMode: 'explicit',
               viewWindow: {
                 min: 0
               }
             }
           };
-          var chart = new google.visualization.LineChart(document.getElementById('DashBoard-Revenue'));
+          var chart = new google.visualization.LineChart(document.getElementById('DashBoard-GDP-Country'));
           chart.draw(view, options);
         });
       }
       else {
-        document.getElementById('DashBoard-Revenue').innerHTML = "<h3>Please Select Country</h3>"
+        document.getElementById('DashBoard-GDP-Country').innerHTML = "<h3>Please Select Country</h3>"
       }
     })
   
