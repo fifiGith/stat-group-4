@@ -15,6 +15,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
@@ -27,6 +30,9 @@
         <span class="brand">Eastern Europe </span>
       </a>
         <ul class="nav nav-pills">
+          <li class="nav-item">
+              <a class="nav-link" href="#map">Map</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#tax">Tax</a>
           </li>
@@ -44,6 +50,9 @@
           </li>
         </ul>
     </nav>
+  <div data-aos="flip-down" id="map">
+      <div id="choropleth"></div>
+  </div>
   <div class="container">
     <div data-aos = "fade-up" class="tax">
       <img  id = 'tax' class="img_thumbnail" src="img/bulgaria.jpg">
@@ -136,6 +145,72 @@
     overflow: true
   });
   AOS.init();
+</script>
+<script>
+var map = new Datamap({
+    element: document.getElementById('choropleth'),
+    height: 500,
+    setProjection: function(element) {
+      var projection = d3.geo.equirectangular()
+          .center([40, 50])
+          .rotate([4.4, 0])
+          .scale(700)
+          .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+      var path = d3.geo.path()
+          .projection(projection);
+      return {path: path, projection: projection};
+      },
+    fills: {
+        GRC: '#ee4035',
+        POL: '#f37736',
+        RUS: '#f6cd61',
+        BGR: '#7bc043',
+        ROU: '#0932cf',
+        defaultFill: '#e7eff6'
+    },
+    data: {
+        GRC: {
+            fillKey: 'GRC',
+            Population: 10.77,
+            Area: 131957
+        },
+        POL: {
+            fillKey: 'POL',
+            Population: 38.43,
+            Area: 312679
+        },
+        RUS: {
+            fillKey: 'RUS',
+            Population: 144.5,
+            Area: 17100000
+        },
+        BGR: {
+            fillKey: 'BGR',
+            Population: 7.102,
+            Area: 110994
+        },
+        ROU: {
+            fillKey: 'ROU',
+            Population: 19.64,
+            Area: 238397
+        }
+    },
+    geographyConfig: {
+      highlightFillColor: function(data) {
+          if (data.fillKey) {
+              return data.fillKey;
+          }
+          return '#e7eff6';
+      },
+        popupTemplate: function(geo, data) {
+            return ['<div class="hoverinfo"><strong>',geo.properties.name,
+                    '<div >','Population : ' + data.Population +' million','</div>',
+                    '<div>','Area : ' + data.Area + ' sq.km','</div>',
+                    '</strong></div>'].join('');
+        }
+    }
+
+});
 </script>
 
 </html>
