@@ -12,6 +12,8 @@ function drawChart() {
     var view = new google.visualization.DataView(data)
     view.setColumns([0, 1, 2, 3, 4, 5])
     var options = {
+      weight: 900,
+      height: 500,
       title: 'Bulgaria',
       legend: {
         position: 'bottom'
@@ -41,6 +43,8 @@ function drawChart() {
       var view = new google.visualization.DataView(data)
       view.setColumns([0, 1, 2, 3, 4, 5])
       var options = {
+        weight: 900,
+        height: 500,
         title: 'Greece',
         legend: {
           position: 'bottom'
@@ -71,6 +75,8 @@ function drawChart() {
       var view = new google.visualization.DataView(data)
       view.setColumns([0, 1, 2, 3, 4, 5])
       var options = {
+        weight: 900,
+        height: 500,
         title: 'Bulgaria',
         legend: {
           position: 'bottom'
@@ -101,6 +107,8 @@ function drawChart() {
       var view = new google.visualization.DataView(data)
       view.setColumns([0, 1, 2, 3, 4, 5])
       var options = {
+        weight: 900,
+        height: 500,
         title: 'Romania',
         legend: {
           position: 'bottom'
@@ -130,6 +138,8 @@ function drawChart() {
         var view = new google.visualization.DataView(data)
         view.setColumns([0,1,2,3,4,5])
         var options = {
+          weight: 900,
+          height: 500,
           title: 'Poland',
           legend: { position: 'bottom' },
           hAxis: {
@@ -156,6 +166,8 @@ function drawChart() {
       var view = new google.visualization.DataView(data)
       view.setColumns([0, 1, 2, 3, 4, 5])
       var options = {
+        weight: 900,
+        height: 500,
         title: 'Russia',
         legend: {
           position: 'bottom'

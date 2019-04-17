@@ -12,6 +12,8 @@ google.charts.load('current', {
       console.log(data);
       var view = new google.visualization.DataView(data)
       var options = {
+        weight: 900,
+        height: 500,
         title: 'Revenue',
         legend: {
           position: 'bottom'
@@ -68,6 +70,8 @@ google.charts.load('current', {
           var view = new google.visualization.DataView(data)
           view.setColumns(select)
           var options = {
+            weight: 900,
+            height: 500,
             title: 'Revenue',
             legend: {
               position: 'bottom'
