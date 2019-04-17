@@ -10,6 +10,7 @@
   <script src="./js/revenue.js"></script>
   <script src="./js/geochart.js"></script>
   <script src="./js/gdp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@4.0.0/dist/simpleParallax.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -40,6 +41,8 @@
     </nav>
   <div class="container">
     <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="tax" id = 'tax'>
+    <img class="img_thumbnail" src="img/bulgaria.jpg">
+    <div class="tax">
       <h1>Tax</h1>
       <div id="DashBoard-Tax" class="graph" style="width: 1000px; height: 500px"></div>
       <div>
@@ -54,6 +57,8 @@
     <hr>
 
     <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="revenue" id = 'revenue'>
+    <img class="img_thumbnail" src="img/greece.jpg">
+    <div class="revenue">
       <h1>Revenue</h1>
       <div id="DashBoard-Revenue" class="graph" style="width: 1000px; height: 700px"></div>
       <div id='Checkbox-group'>
@@ -68,6 +73,8 @@
     <hr>
 
     <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="revenue-year" id = 'revenue-year'>
+    <img class="img_thumbnail" src="img/russia.jpg">
+    <div class="revenue-year">
       <h1>Revenue by year</h1>
       <canvas id="myChart" class="graph" width="300" height="150"></canvas>
       <p id="year">Year: 2003</p>
@@ -78,6 +85,8 @@
     <hr>
 
     <div  data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="gdp" id = 'gdp'>
+    <img class="img_thumbnail" src="img/poland.jpg">
+    <div class="gdp">
       <h1>Value added to GDP (Percent)</h1>
       <h1>Selected: <span id="current"></span></h1>
       <div id="dashboard_div">
@@ -92,6 +101,8 @@
     <hr>
 
     <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="gdp-service" id = 'gdp-service'>
+    <img class="img_thumbnail" src="img/romania.jpg">
+    <div class="gdp-service">
       <div class="title">
         <h1>GDP - Services</h1>
       </div>
@@ -137,9 +148,18 @@
       </div>
     </div>
   </div>
+  
 </body>
 <script>
+<<<<<<< HEAD
   AOS.init();
 </script>
 
+=======
+    var images = document.getElementsByClassName("img_thumbnail");
+    new simpleParallax(images, {
+      scale: 1.4
+    });
+</script>
+>>>>>>> nol
 </html>

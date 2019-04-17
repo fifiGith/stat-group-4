@@ -153,3 +153,10 @@ hr {
   margin-top: 100px;
   padding-top: 50px;
 }
+
+.img_thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
