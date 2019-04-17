@@ -1,131 +1,122 @@
-
 <html>
-    <head>
-      <script src="./js/jquery-3.4.0.js"></script>
-      <script src="./js/jquery.csv.min.js"></script>
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-      <script src="./js/tax.js"></script>
-      <script src="./js/revenue.js"></script>
-      <script src="./js/geochart.js"></script>
-      <script src="./js/gdp.js"></script>
-    <link rel="stylesheet" type="text/css" href="./js/style.css" />
-      <style>
-          div {
-              width: 80%;
-          }
-          .slider {
-              -webkit-appearance: none;
-              width: 100%;
-              height: 15px;
-              border-radius: 5px;
-              background: #d3d3d3;
-              outline: none;
-              opacity: 0.7;
-              -webkit-transition: .2s;
-              transition: opacity .2s;
-          }
-          .slider::-webkit-slider-thumb {
-              -webkit-appearance: none;
-              appearance: none;
-              width: 25px;
-              height: 25px;
-              border-radius: 50%;
-              background: #4CAF50;
-              cursor: pointer;
-          }
-          .slider::-moz-range-thumb {
-              width: 25px;
-              height: 25px;
-              border-radius: 50%;
-              background: #4CAF50;
-              cursor: pointer;
-          }
-      </style>
-    </head>
-    <body>
-      <div><h1>Tax</h1></div>
-      <div id="DashBoard-Tax" style="width: 1000px; height: 700px"></div>
-      <div>
-          <input type="button" id="Bulgaria" value="Bulgaria" />
-          <input type="button" id="Greece" value="Greece" />
-          <input type="button" id="Poland" value="Poland" />
-          <input type="button" id="Romania" value="Romania" />
-          <input type="button" id="Russia" value="Russia" />
-      </div>
 
-      <div><h1>Revenue</h1></div>
-      <div id="DashBoard-Revenue" style="width: 1000px; height: 700px"></div>
-      <div id = 'Checkbox-group'>
-          <input type="checkbox" id="Bulgaria-checkbox" checked>Bulgaria</input>
-          <input type="checkbox" id="Greece-checkbox" checked>Greece</input>
-          <input type="checkbox" id="Poland-checkbox" checked>Poland</input>
-          <input type="checkbox" id="Romania-checkbox" checked>Romania</input>
-          <input type="checkbox" id="Russia-checkbox" checked>Russia</input>
-      </div>
-      <br>
-      <hr>
+<head>
+  <script src="./js/jquery-3.4.0.js"></script>
+  <script src="./js/jquery.csv.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+  <script src="./js/tax.js"></script>
+  <script src="./js/revenue.js"></script>
+  <script src="./js/geochart.js"></script>
+  <script src="./js/gdp.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Eastern Europe - Group 4</span>
+    </nav>
+  <div class="container">
+    <div class="tax">
+      <h1>Tax</h1>
+      <div id="DashBoard-Tax" class="graph" style="width: 1000px; height: 500px"></div>
       <div>
-        <h1>Revenue by year</h1>
-        <canvas id="myChart" width="300" height="150"></canvas>
-        <p id="year">Year: 2003</p>
-        <input id="slider" class="slider" type="range" min="2003" max="2013" value="2003">
-        <script src="./js/script.js"></script>
+        <input type="button" id="Bulgaria" value="Bulgaria" />
+        <input type="button" id="Greece" value="Greece" />
+        <input type="button" id="Poland" value="Poland" />
+        <input type="button" id="Romania" value="Romania" />
+        <input type="button" id="Russia" value="Russia" />
       </div>
+    </div>
+
+    <hr>
+
+    <div class="revenue">
+      <h1>Revenue</h1>
+      <div id="DashBoard-Revenue" class="graph" style="width: 1000px; height: 700px"></div>
+      <div id='Checkbox-group'>
+        <input type="checkbox" id="Bulgaria-checkbox" checked>Bulgaria</input>
+        <input type="checkbox" id="Greece-checkbox" checked>Greece</input>
+        <input type="checkbox" id="Poland-checkbox" checked>Poland</input>
+        <input type="checkbox" id="Romania-checkbox" checked>Romania</input>
+        <input type="checkbox" id="Russia-checkbox" checked>Russia</input>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="revenue-year">
+      <h1>Revenue by year</h1>
+      <canvas id="myChart" class="graph" width="300" height="150"></canvas>
+      <p id="year">Year: 2003</p>
+      <input id="slider" class="slider" type="range" min="2003" max="2013" value="2003">
+      <script src="./js/script.js"></script>
+    </div>
+
+    <hr>
+
+    <div class="gdp">
       <h1>Value added to GDP (Percent)</h1>
       <h1>Selected: <span id="current"></span></h1>
       <div id="dashboard_div">
-          <div id="filter_div"></div>
-          <div id="regions_div" style="width: 900px; height: 500px;"></div>
-          <input type="button" id="agriculture" value="Agriculture" />
-          <input type="button" id="services" value="Services" />
-          <input type="button" id="industry" value="Industry" />
-        </div>
-        <div class="title"><h1>GDP - Services</h1></div>
-    <div><h4>Services value in USD</h4></div>
-    <div><h5>เนื่องด้วย Servicesส่งผลต่อGDPใน5ประเทศที่เลือกมา</h5></div>
-    <div>
-      <div class="box-chart" id="gdp-chart"></div>
-      <div class="box-dropdown">
-        <dl class="dropdown">
-          <dt>
-            <a href="#">
-              <span class="hida">Select</span>
-              <p class="multiSel"></p>
-            </a>
-          </dt>
-
-          <dd>
-            <div class="mutliSelect" id="multi-select">
-              <ul>
-                <li>
-                  <input
-                    type="checkbox"
-                    id="cb-Bulgaria"
-                    value="Bulgaria"
-                  />Bulgaria
-                </li>
-                <li>
-                  <input type="checkbox" id="cb-Greece" value="Greece" />Greece
-                </li>
-                <li>
-                  <input type="checkbox" id="cb-Poland" value="Poland" />Poland
-                </li>
-                <li>
-                  <input
-                    type="checkbox"
-                    id="cb-Romania"
-                    value="Romania"
-                  />Romania
-                </li>
-                <li>
-                  <input type="checkbox" id="cb-Russia" value="Russia" />Russia
-                </li>
-              </ul>
-            </div>
-          </dd>
-        </dl>
+        <div id="filter_div"></div>
+        <div id="regions_div" class="graph" style="width: 900px; height: 500px;"></div>
+        <input type="button" id="agriculture" value="Agriculture" />
+        <input type="button" id="services" value="Services" />
+        <input type="button" id="industry" value="Industry" />
       </div>
     </div>
-    </body>
-  </html>
+
+    <hr>
+
+    <div class="gdp-service">
+      <div class="title">
+        <h1>GDP - Services</h1>
+      </div>
+      <div>
+        <h4>Services value in USD</h4>
+      </div>
+      <div>
+        <h5>เนื่องด้วย Services ส่งผลต่อ GDP ใน 5 ประเทศที่เลือกมา</h5>
+      </div>
+      <div>
+        <div class="box-chart graph" id="gdp-chart"></div>
+        <div class="box-dropdown">
+          <dl class="dropdown">
+            <dt>
+              <a href="#">
+                <span class="hida">Select</span>
+                <p class="multiSel"></p>
+              </a>
+            </dt>
+            <dd>
+              <div class="mutliSelect" id="multi-select">
+                <ul>
+                  <li>
+                    <input type="checkbox" id="cb-Bulgaria" value="Bulgaria" />Bulgaria
+                  </li>
+                  <li>
+                    <input type="checkbox" id="cb-Greece" value="Greece" />Greece
+                  </li>
+                  <li>
+                    <input type="checkbox" id="cb-Poland" value="Poland" />Poland
+                  </li>
+                  <li>
+                    <input type="checkbox" id="cb-Romania" value="Romania" />Romania
+                  </li>
+                  <li>
+                    <input type="checkbox" id="cb-Russia" value="Russia" />Russia
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
