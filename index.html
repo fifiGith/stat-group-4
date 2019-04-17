@@ -11,16 +11,35 @@
   <script src="./js/geochart.js"></script>
   <script src="./js/gdp.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark " >
         <span class="navbar-brand mb-0 h1">Eastern Europe - Group 4</span>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#tax">Tax</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#revenue">Revenue</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#revenue-year">Revenue By Year</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gdp">GDP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gdp-service">GDP-Service</a>
+          </li>
+        </ul>
     </nav>
   <div class="container">
-    <div class="tax">
+    <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="tax" id = 'tax'>
       <h1>Tax</h1>
       <div id="DashBoard-Tax" class="graph" style="width: 1000px; height: 500px"></div>
       <div>
@@ -34,7 +53,7 @@
 
     <hr>
 
-    <div class="revenue">
+    <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="revenue" id = 'revenue'>
       <h1>Revenue</h1>
       <div id="DashBoard-Revenue" class="graph" style="width: 1000px; height: 700px"></div>
       <div id='Checkbox-group'>
@@ -48,7 +67,7 @@
 
     <hr>
 
-    <div class="revenue-year">
+    <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="revenue-year" id = 'revenue-year'>
       <h1>Revenue by year</h1>
       <canvas id="myChart" class="graph" width="300" height="150"></canvas>
       <p id="year">Year: 2003</p>
@@ -58,7 +77,7 @@
 
     <hr>
 
-    <div class="gdp">
+    <div  data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="gdp" id = 'gdp'>
       <h1>Value added to GDP (Percent)</h1>
       <h1>Selected: <span id="current"></span></h1>
       <div id="dashboard_div">
@@ -72,7 +91,7 @@
 
     <hr>
 
-    <div class="gdp-service">
+    <div data-aos = "fade-up" data-aos-anchor-placement="bottom-bottom" class="gdp-service" id = 'gdp-service'>
       <div class="title">
         <h1>GDP - Services</h1>
       </div>
@@ -119,5 +138,8 @@
     </div>
   </div>
 </body>
+<script>
+  AOS.init();
+</script>
 
 </html>
