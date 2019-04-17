@@ -122,35 +122,30 @@ function drawChart() {
     });
   })
 
-  document.getElementById('Poland').addEventListener('click', function () {
-    $.get("./data/Poland-tax.csv", function (csvString) {
-      var arrayData = $.csv.toArrays(csvString, {
-        onParseValue: $.csv.hooks.castToScalar
-      });
-      var data = google.visualization.arrayToDataTable(arrayData);
-      var view = new google.visualization.DataView(data)
-      view.setColumns([0, 1, 2, 3, 4, 5])
-      var options = {
-        title: 'Poland',
-        legend: {
-          position: 'bottom'
-        },
-        hAxis: {
-          title: "Year",
-          format: 'year '
-        },
-        vAxis: {
-          title: "Tax value (USD)",
-          viewWindowMode: 'explicit',
-          viewWindow: {
-            min: 0
-          }
-        }
-      };
-      var chart = new google.visualization.LineChart(document.getElementById('DashBoard-Tax'));
-      chart.draw(view, options);
-    });
-  })
+  document.getElementById('Poland').addEventListener('click', function(){
+    $.get("./data/Poland-tax.csv", function(csvString) {
+        var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
+        var data = google.visualization.arrayToDataTable(arrayData);
+        console.log(data);
+        var view = new google.visualization.DataView(data)
+        view.setColumns([0,1,2,3,4,5])
+        var options = {
+          title: 'Poland',
+          legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
+          vAxis: { 
+            title: "Tax value (USD)", 
+            viewWindowMode:'explicit',
+            viewWindow:{
+            min:0
+          }}
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('DashBoard-Tax'));
+        chart.draw(view, options);
+  });})
 
   document.getElementById('Russia').addEventListener('click', function () {
     $.get("./data/Russia-tax.csv", function (csvString) {
