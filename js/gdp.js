@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(drawChart);
 // instantiates the pie chart, passes in the data and draws it.
 function drawChart() {
   // Create the data table.
-  $.get("./data/GDP-Service-USD.csv", function (str) {
+  $.get("./data/GDP-Service-USD.csv", function(str) {
     var arrayData = $.csv.toArrays(str, {
       onParseValue: $.csv.hooks.castToScalar
     });
@@ -19,9 +19,8 @@ function drawChart() {
     var view = new google.visualization.DataView(data);
     // Set chart options
     var options = {
-      title: "GDP",
-      width: 800,
-      height: 400,
+      width: 1000,
+      height: 500,
       isStacked: "true",
       legend: {
         position: "bottom",
@@ -38,11 +37,11 @@ function drawChart() {
     chart.draw(view, options);
   });
 
-  $(".dropdown dt a").on("click", function () {
+  $(".dropdown dt a").on("click", function() {
     $(".dropdown dd ul").slideToggle("fast");
   });
 
-  $(".dropdown dd ul li a").on("click", function () {
+  $(".dropdown dd ul li a").on("click", function() {
     $(".dropdown dd ul").hide();
   });
 
@@ -52,16 +51,16 @@ function drawChart() {
       .html();
   }
 
-  $(document).bind("click", function (e) {
+  $(document).bind("click", function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
   });
 
-  $('.mutliSelect input[type="checkbox"]').on("click", function () {
+  $('.mutliSelect input[type="checkbox"]').on("click", function() {
     var title = $(this)
-      .closest(".mutliSelect")
-      .find('input[type="checkbox"]')
-      .val(),
+        .closest(".mutliSelect")
+        .find('input[type="checkbox"]')
+        .val(),
       title = $(this).val() + ",";
 
     if ($(this).is(":checked")) {
@@ -81,7 +80,7 @@ function drawChart() {
   var Poland = document.getElementById("cb-Poland");
   var Russia = document.getElementById("cb-Russia");
 
-  document.getElementById("multi-select").addEventListener("click", function () {
+  document.getElementById("multi-select").addEventListener("click", function() {
     var select = [0];
     if (Bulgaria.checked) {
       select.push(1);
@@ -99,7 +98,7 @@ function drawChart() {
       select.push(5);
     }
 
-    $.get("./data/GDP-Service-USD.csv", function (str) {
+    $.get("./data/GDP-Service-USD.csv", function(str) {
       var arrayData = $.csv.toArrays(str, {
         onParseValue: $.csv.hooks.castToScalar
       });
@@ -108,9 +107,8 @@ function drawChart() {
       var view = new google.visualization.DataView(data);
       view.setColumns(select);
       var options = {
-        title: "GDP",
-        width: 800,
-        height: 400,
+        width: 1000,
+        height: 500,
         isStacked: "true",
         legend: {
           position: "bottom",
