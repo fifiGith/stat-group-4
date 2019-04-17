@@ -21,7 +21,7 @@ google.charts.load('current', {
           format: 'year '
         },
         vAxis: {
-          title: "Tax value (USD)",
+          title: "Revenue value (USD)",
           viewWindowMode: 'explicit',
           viewWindow: {
             min: 0
@@ -73,7 +73,7 @@ google.charts.load('current', {
               position: 'bottom'
             },
             vAxis: {
-              title: "Tax value (USD)",
+              title: "Revenue value (USD)",
               viewWindowMode: 'explicit',
               viewWindow: {
                 min: 0
