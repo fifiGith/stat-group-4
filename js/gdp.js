@@ -19,7 +19,7 @@ function drawChart() {
     var view = new google.visualization.DataView(data);
     // Set chart options
     var options = {
-      width: 1000,
+      weight: 900,
       height: 500,
       isStacked: "true",
       legend: {
@@ -80,7 +80,7 @@ function drawChart() {
   var Poland = document.getElementById("cb-Poland");
   var Russia = document.getElementById("cb-Russia");
 
-  document.getElementById("multi-select").addEventListener("click", function() {
+  document.getElementById("checkbox-group").addEventListener("click", function() {
     var select = [0];
     if (Bulgaria.checked) {
       select.push(1);
@@ -97,31 +97,36 @@ function drawChart() {
     if (Russia.checked) {
       select.push(5);
     }
-
-    $.get("./data/GDP-Service-USD.csv", function(str) {
-      var arrayData = $.csv.toArrays(str, {
-        onParseValue: $.csv.hooks.castToScalar
+    if(Russia.checked||Poland.checked||Romania.checked||Greece.checked||Bulgaria.checked)
+    {
+      $.get("./data/GDP-Service-USD.csv", function(str) {
+        var arrayData = $.csv.toArrays(str, {
+          onParseValue: $.csv.hooks.castToScalar
+        });
+        var data = google.visualization.arrayToDataTable(arrayData);
+  
+        var view = new google.visualization.DataView(data);
+        view.setColumns(select);
+        var options = {
+          weight: 900,
+          height: 500,
+          isStacked: "true",
+          legend: {
+            position: "bottom",
+            maxLines: 3
+          },
+          vAxis: {
+            minValue: 0
+          }
+        };
+        var chart = new google.visualization.AreaChart(
+          document.getElementById("gdp-chart")
+        );
+        chart.draw(view, options);
       });
-      var data = google.visualization.arrayToDataTable(arrayData);
-
-      var view = new google.visualization.DataView(data);
-      view.setColumns(select);
-      var options = {
-        width: 1000,
-        height: 500,
-        isStacked: "true",
-        legend: {
-          position: "bottom",
-          maxLines: 3
-        },
-        vAxis: {
-          minValue: 0
-        }
-      };
-      var chart = new google.visualization.AreaChart(
-        document.getElementById("gdp-chart")
-      );
-      chart.draw(view, options);
-    });
+    }
+    else {
+      document.getElementById('gdp-chart').innerHTML = "<h3>Please Select Country</h3>"
+    }
   });
 }

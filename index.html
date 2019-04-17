@@ -65,11 +65,11 @@
       <h1>Revenue</h1>
       <div id="DashBoard-Revenue" class="graph" style="width: 1000px; height: 500px"></div>
       <div id='Checkbox-group'>
-        <input type="checkbox" id="Bulgaria-checkbox" checked>Bulgaria</input>
-        <input type="checkbox" id="Greece-checkbox" checked>Greece</input>
-        <input type="checkbox" id="Poland-checkbox" checked>Poland</input>
-        <input type="checkbox" id="Romania-checkbox" checked>Romania</input>
-        <input type="checkbox" id="Russia-checkbox" checked>Russia</input>
+        <input type="checkbox" class = 'check' id="Bulgaria-checkbox" checked>Bulgaria</input>
+        <input type="checkbox" class = 'check' id="Greece-checkbox" checked>Greece</input>
+        <input type="checkbox" class = 'check' id="Poland-checkbox" checked>Poland</input>
+        <input type="checkbox" class = 'check' id="Romania-checkbox" checked>Romania</input>
+        <input type="checkbox" class = 'check' id="Russia-checkbox" checked>Russia</input>
       </div>
     </div>
 
@@ -114,39 +114,18 @@
       </div>
       <div>
         <div class="box-chart graph" id="gdp-chart"></div>
-        <div class="box-dropdown">
-          <dl class="dropdown">
-            <dt>
-              <a href="#">
-                <span class="hida">Select</span>
-                <p class="multiSel"></p>
-              </a>
-            </dt>
-            <dd>
-              <div class="mutliSelect" id="multi-select">
-                <ul>
-                  <li>
-                    <input type="checkbox" id="cb-Bulgaria" value="Bulgaria" />Bulgaria
-                  </li>
-                  <li>
-                    <input type="checkbox" id="cb-Greece" value="Greece" />Greece
-                  </li>
-                  <li>
-                    <input type="checkbox" id="cb-Poland" value="Poland" />Poland
-                  </li>
-                  <li>
-                    <input type="checkbox" id="cb-Romania" value="Romania" />Romania
-                  </li>
-                  <li>
-                    <input type="checkbox" id="cb-Russia" value="Russia" />Russia
-                  </li>
-                </ul>
-              </div>
-            </dd>
-          </dl>
+        <div id = "checkbox-group">
+          <input type="checkbox" class = 'check' id="cb-Bulgaria" value="Bulgaria" checked/>Bulgaria
+          <input type="checkbox" class = 'check' id="cb-Greece" value="Greece" checked/>Greece
+          <input type="checkbox" class = 'check' id="cb-Poland" value="Poland" checked/>Poland
+          <input type="checkbox" class = 'check' id="cb-Romania" value="Romania" checked />Romania
+          <input type="checkbox" class = 'check' id="cb-Russia" value="Russia" checked/>Russia
         </div>
       </div>
     </div>
+
+    <hr>
+
   </div>
 </body>
 <script>

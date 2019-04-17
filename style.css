@@ -165,3 +165,8 @@ hr {
   margin-left: 100px;
   width: 50%;
 }
+.check {
+  width: 15px;
+  height: 15px;
+  font-size: 30px;
+}
