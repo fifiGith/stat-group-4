@@ -106,10 +106,14 @@ hr {
   margin-bottom: 2rem;
 }
 
-nav {
+.navbar {
+  overflow: hidden;
   margin-bottom: 2rem;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index:999
 }
-
 .graph {
   margin: auto;
 }
@@ -146,6 +150,8 @@ nav {
 
 .container {
   text-align: center;
+  margin-top: 100px;
+  padding-top: 50px;
 }
 
 .img_thumbnail {
