@@ -114,6 +114,9 @@ hr {
   width: 100%; /* Full width */
   z-index:999
 }
+.nav-item :hover {
+  background-color: bisque;
+}
 .graph {
   margin: auto;
 }

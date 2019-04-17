@@ -19,8 +19,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark " >
-        <span class="navbar-brand mb-0 h1">Eastern Europe - Group 4</span>
+    <nav class="navbar navbar-dark", style="background-color: #FF5733" >
+      <a class="navbar-brand navbar-brand-logo" href="#">
+        <span class="logo">
+          <img src = 'img/planet-earth.png' style="width:50px; height: 50px">
+        </span>
+        <span class="brand">Eastern Europe </span>
+      </a>
         <ul class="nav nav-pills">
           <li class="nav-item">
             <a class="nav-link" href="#tax">Tax</a>
@@ -43,7 +48,7 @@
     <div data-aos = "fade-up" class="tax">
       <img  id = 'tax' class="img_thumbnail" src="img/bulgaria.jpg">
       <h1>Tax</h1>
-      <div id="DashBoard-Tax" class="graph" </div>
+      <div id="DashBoard-Tax" class="graph" style="width: 1000px; height: 500px"></div>
       <div>
         <input class="btn btn-primary" type="button" id="Bulgaria" value="Bulgaria" />
         <input class="btn btn-primary" type="button" id="Greece" value="Greece" />
@@ -58,7 +63,7 @@
     <div data-aos = "fade-up"  class="revenue" >
       <img id = 'revenue' class="img_thumbnail" src="img/greece.jpg">
       <h1>Revenue</h1>
-      <div id="DashBoard-Revenue" class="graph" ></div>
+      <div id="DashBoard-Revenue" class="graph" style="width: 1000px; height: 500px"></div>
       <div id='Checkbox-group'>
         <input type="checkbox" id="Bulgaria-checkbox" checked>Bulgaria</input>
         <input type="checkbox" id="Greece-checkbox" checked>Greece</input>
